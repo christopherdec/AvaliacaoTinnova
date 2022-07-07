@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Veiculos</title>
+</head>
+<body>
+
+<div align="center">
+    <h1>Lista de Marcas</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Numero de veiculos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="marca: ${listaMarcas}">
+            <td th:text="${marca.nome}"></td>
+            <td th:text="${marca.veiculos.size()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div align="center">
+    <h1>Cadastrar Veiculo</h1>
+    <form method="post" th:object="${novoVeiculo}" th:action="@{/veiculos/}">
+        <table>
+            <tr>
+                <td>
+                    <label for="nome"></label>
+                    <input id="nome" placeholder="nome do veículo" required type="text" th:field="*{veiculo}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="marca"></label>
+                    <input id="marca" placeholder="marca do veículo" required type="text" th:field="*{descricao}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="ano"></label>
+                    <input id="ano" placeholder="ano de fabricação" required type="text" th:field="*{ano}"/>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Cadastrar Veiculo"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
