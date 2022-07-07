@@ -42,8 +42,10 @@ public class VeiculoService {
         }
         if (veiculo.getVeiculo() != null)
             veiculoAtual.setVeiculo(veiculo.getVeiculo());
-        if (veiculo.getAno() == 0)
+        if (veiculo.getAno() != 0)
             veiculoAtual.setAno(veiculo.getAno());
+        if (veiculo.getCor() != null)
+            veiculoAtual.setCor(veiculo.getCor());
         if (veiculo.getDescricao() != null)
             veiculoAtual.setDescricao(veiculo.getDescricao());
         if (veiculo.getCreated() != null)

@@ -45,6 +45,7 @@ public class VeiculoController {
     @PutMapping("/{veiculoId}")
     public ResponseEntity<Veiculo> atualizar(@PathVariable Long veiculoId, @RequestBody Veiculo veiculo) {
         try {
+            System.out.println(veiculo);
             veiculo = veiculoService.atualizar(veiculoId, veiculo);
             return ResponseEntity.ok(veiculo);
 
@@ -55,6 +56,7 @@ public class VeiculoController {
 
     @PatchMapping("/{veiculoId}")
     public ResponseEntity<Veiculo> atualizarParcial(@PathVariable Long veiculoId, @RequestBody Veiculo veiculo) {
+        System.out.println(veiculo);
         return atualizar(veiculoId, veiculo);
     }
 
